@@ -40,3 +40,21 @@ object JsonTester2 {
 
     }
 }
+
+object JsonInNestedArray {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val jsonObject =
+                json {
+                    "foo" to "bar"
+                    "age" to 37
+                    "contacts" to arrayOf(
+                            json{ "name" to "anna"},
+                            json{ "name" to "maria"}
+                    )
+                }
+        println(jsonObject)
+
+
+    }
+}
