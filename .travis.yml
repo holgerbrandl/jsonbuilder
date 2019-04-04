@@ -1,0 +1,35 @@
+dist: trusty
+
+language: java
+
+## https://docs.travis-ci.com/user/languages/java
+## http://stackoverflow.com/questions/20707017/how-to-run-junit-tests-with-gradle
+## how to run tests with gradle https://docs.gradle.org/current/userguide/tutorial_gradle_command_line.html
+## gradle check or gradle test
+
+## http://stackoverflow.com/questions/17606874/trigger-a-travis-ci-rebuild-except-pushing-a-commit
+
+jdk:
+  - oraclejdk8
+
+#install: gradle -q assemble
+
+sudo: required
+
+services:
+  - docker
+
+install:
+#- docker pull holgerbrandl/kravis_core:3.5.1
+
+#- docker pull holgerbrandl/kravis_rserve
+#- docker run -dp 127.0.0.1:6311:6311 holgerbrandl/kravis_rserve
+#- docker ps -a
+
+
+#- sudo apt-get install -y r-base
+#- sudo chmod -R ugo+w /usr/local/lib/R/site-library
+#- R -e "install.packages('devtools', repos = 'http://cran.us.r-project.org')"
+#- R -e "install.packages('tidyverse', repos = 'http://cran.us.r-project.org')"
+
+script: gradle clean test --stacktrace --info
