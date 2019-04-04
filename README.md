@@ -1,6 +1,6 @@
 # jsonbuilder for Kotlin
 
-jsonbuilder is a small artefcat that serves a single purpose. It allows to create json using an idiomatic kotlin builder.
+`jsonbuilder` is a small artifact that serves a single purpose: It allows to create json using an idiomatic [kotlin](https://kotlinlang.org/) builder DSL.
 
 ## Example
 
@@ -63,3 +63,24 @@ To build and install it into your local maven cache, simply clone the repo and r
 ./gradlew install
 ```
 
+Documentation
+-------------
+
+This `README.md`. Feel welcome to file tickets about missing pieces in the docs.
+
+
+How to contribute?
+------------------
+
+Feel welcome to post ideas, suggestions and criticism to our [tracker](https://github.com/holgerbrandl/jsonbuilder/issues).
+
+We always welcome pull requests. :-)
+
+You could also show your spiritual support by just upvoting `jsonbuilder` here on github.
+
+
+
+# References
+
+* https://stackoverflow.com/questions/41861449/kotlin-dsl-for-creating-json-objects-without-creating-garbage
+* https://github.com/SalomonBrys/Kotson
