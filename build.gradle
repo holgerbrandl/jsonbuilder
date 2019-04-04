@@ -13,7 +13,7 @@ buildscript {
 
 
 
-plugins { id "com.jfrog.bintray" version "1.2" }
+plugins { id "com.jfrog.bintray" version "1.8.1" }
 
 apply plugin: 'java'
 apply plugin: 'kotlin'
@@ -64,8 +64,8 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 
 
 group 'com.github.holgerbrandl'
-//version '0.6-SNAPSHOT'
-version '0.6'
+version '0.7-SNAPSHOT'
+//version '0.6'
 
 
 

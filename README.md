@@ -42,9 +42,14 @@ Both arrays and nested elements are supported without additional functions/const
 Installation
 ------------
 
-To get started simply add it as a dependency via Jcenter:
+To get started simply add it as a dependency in your `build.gradle`:
 ```
-compile "com.github.holgerbrandl:jsonbuilder:0.5"
+compile "com.github.holgerbrandl:jsonbuilder:0.6"
+```
+
+Note: Until bintray has approved the inclusion into jcenter you'll need to add the following repo
+```
+maven { url "https://dl.bintray.com/holgerbrandl/github" }
 ```
 
 You can also use [JitPack with Maven or Gradle](https://jitpack.io/#holgerbrandl/jsonbuilder) to build the latest snapshot as a dependency in your project.
