@@ -40,7 +40,7 @@ dependencies {
 
     // from https://github.com/stleary/JSON-java
     compile 'org.json:json:20180813'
-    
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile 'io.kotlintest:kotlintest-assertions:3.1.6'
 
@@ -64,8 +64,8 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 
 
 group 'com.github.holgerbrandl'
-//version '0.5-SNAPSHOT'
-version '0.5'
+//version '0.6-SNAPSHOT'
+version '0.6'
 
 
 

@@ -33,15 +33,15 @@ git push --tags
 # check the current tags and existing releases of the repo
 # binaries are located under $GOPATH/bin
 export PATH=~/go/bin/:$PATH
-github-release info -u holgerbrandl -r krangl
+github-release info -u holgerbrandl -r jsonbuilder
 
 # create a formal release
 github-release release \
     --user holgerbrandl \
-    --repo kravis \
+    --repo jsonbuilder \
     --tag "v${jb_version}" \
     --name "v${jb_version}" \
-    --description "See [CHANGES.md](https://github.com/holgerbrandl/kravis/blob/master/CHANGES.md) for changes." 
+    --description "See [CHANGES.md](https://github.com/holgerbrandl/jsonbuilder/blob/master/CHANGES.md) for changes."
 #    --pre-release
 
 
