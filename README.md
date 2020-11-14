@@ -44,7 +44,7 @@ Installation
 
 To get started simply add it as a dependency in your `build.gradle`:
 ```
-compile "com.github.holgerbrandl:jsonbuilder:0.6"
+compile "com.github.holgerbrandl:jsonbuilder:0.7"
 ```
 
 Note: Until bintray has approved the inclusion into jcenter you'll need to add the following repo
