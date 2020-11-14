@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.3.21'
+    ext.kotlin_version = '1.4.10'
 
     repositories {
         maven { url 'https://dl.bintray.com/kotlin/dokka' }
@@ -13,7 +13,10 @@ buildscript {
 
 
 
-plugins { id "com.jfrog.bintray" version "1.8.1" }
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+    id "com.jfrog.bintray" version "1.8.1"
+}
 
 apply plugin: 'java'
 apply plugin: 'kotlin'
@@ -35,11 +38,11 @@ repositories {
 
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib"
+//    compile "org.jetbrains.kotlin:kotlin-stdlib"
 
 
     // from https://github.com/stleary/JSON-java
-    compile 'org.json:json:20180813'
+    compile 'org.json:json:20200518'
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile 'io.kotlintest:kotlintest-assertions:3.1.6'
@@ -64,8 +67,8 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 
 
 group 'com.github.holgerbrandl'
-version '0.7-SNAPSHOT'
-//version '0.6'
+//version '0.7-SNAPSHOT'
+version '0.7'
 
 
 
