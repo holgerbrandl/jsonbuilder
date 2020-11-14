@@ -39,18 +39,20 @@ which will result in the following json structure:
 
 Both arrays and nested elements are supported without additional functions/constructs.
 
-Installation
-------------
+## Setup
 
+### Gradle
 To get started simply add it as a dependency in your `build.gradle`:
 ```
 compile "com.github.holgerbrandl:jsonbuilder:0.7"
 ```
 
-Note: Until bintray has approved the inclusion into jcenter you'll need to add the following repo
-```
-maven { url "https://dl.bintray.com/holgerbrandl/github" }
-```
+<!--Note: Until bintray has approved the inclusion into jcenter you'll need to add the following repo-->
+<!--```-->
+<!--maven { url "https://dl.bintray.com/holgerbrandl/github" }-->
+<!--```-->
+
+### Development Snapshots
 
 You can also use [JitPack with Maven or Gradle](https://jitpack.io/#holgerbrandl/jsonbuilder) to build the latest snapshot as a dependency in your project.
 
@@ -63,19 +65,20 @@ dependencies {
 }
 ```
 
+
+### How to build?
+
 To build and install it into your local maven cache, simply clone the repo and run
 ```bash
 ./gradlew install
 ```
 
-Documentation
--------------
+## Documentation
 
 This `README.md`. Feel welcome to file tickets about missing pieces in the docs.
 
 
-How to contribute?
-------------------
+## How to contribute?
 
 Feel welcome to post ideas, suggestions and criticism to our [tracker](https://github.com/holgerbrandl/jsonbuilder/issues).
 
@@ -83,9 +86,12 @@ We always welcome pull requests. :-)
 
 You could also show your spiritual support by just upvoting `jsonbuilder` here on github.
 
+## References
+
+This library is built using https://github.com/stleary/JSON-java
 
 
-# References
-
+Other references
 * https://stackoverflow.com/questions/41861449/kotlin-dsl-for-creating-json-objects-without-creating-garbage
 * https://github.com/SalomonBrys/Kotson
+* 
