@@ -1,4 +1,4 @@
-import com.systema.analytics.es.misc.json
+import com.github.holgerbrandl.jsonbuilder.json
 
 object JsonTester {
 

@@ -1,4 +1,4 @@
-package com.systema.analytics.es.misc
+package com.github.holgerbrandl.jsonbuilder
 
 import org.json.JSONArray
 import org.json.JSONObject
