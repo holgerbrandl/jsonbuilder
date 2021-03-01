@@ -1,12 +1,14 @@
 import com.github.holgerbrandl.jsonbuilder.json
-import io.kotlintest.shouldBe
+import io.kotest.matchers.shouldBe
 import org.json.JSONArray
+import org.junit.Ignore
 import org.junit.Test
 
 
 class BuilderTests {
 
     @Test
+    @Ignore("blocked by https://github.com/stleary/JSON-java/issues/571")
     fun `it should preserver order`() {
         json {
             "name" to 1

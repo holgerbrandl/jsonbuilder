@@ -1,65 +1,50 @@
 ## Release Checklist
 
-1. Increment version in `README.md`, `gradle.build`
+0. Make sure to reference just public artifacts in `gradle.build`
 
+1. Increment version in `README.md`, `gradle.build` and update [CHANGES.md](../CHANGES.md)
 
-3. Update [CHANGES.md](./CHANGES.md)
-
-<!--4. Push and wait for travis CI results-->
-
-5. Do the release
+2. Do the release
 
 ```bash
 export JB_HOME=" /d/projects/misc/jsonbuilder";
 
 trim() { while read -r line; do echo "$line"; done; }
-jb_version=$(grep '^version' ${JB_HOME}/build.gradle | cut -f2 -d' ' | tr -d "'" | trim)
+jb_version='v'$(grep '^version' ${JB_HOME}/build.gradle | cut -f2 -d' ' | tr -d "'" | trim)
 
 echo "new version is $jb_version"
 
-source ~/archive/gh_token.sh
-export GITHUB_TOKEN=${GH_TOKEN}
-#echo $GITHUB_TOKEN
 
-# make your tag and upload
-cd ${JB_HOME}
+if [[ $jb_version == *"-SNAPSHOT" ]]; then
+  echo "ERROR: Won't publish snapshot build $jb_version}!" 1>&2
+  exit 1
+fi
 
-#git tag v${jb_version} && git push --tags
-(git diff --ignore-submodules --exit-code && git tag "v${jb_version}")  || echo "could not tag current branch"
+cd  $JB_HOME
 
-git push
-git push --tags
+git status
+git commit -am "${jb_version} release"
+#git diff --exit-code  || echo "There are uncomitted changes"
 
-# check the current tags and existing releases of the repo
-# binaries are located under $GOPATH/bin
-export PATH=~/go/bin/:$PATH
-github-release info -u holgerbrandl -r jsonbuilder
+git tag "${jb_version}"
 
-# create a formal release
-github-release release \
-    --user holgerbrandl \
-    --repo jsonbuilder \
-    --tag "v${jb_version}" \
-    --name "v${jb_version}" \
-    --description "See [CHANGES.md](https://github.com/holgerbrandl/jsonbuilder/blob/master/CHANGES.md) for changes."
-#    --pre-release
+git push origin 
+git push origin --tags
 
 
 ########################################################################
-### Build and publish the binary release to jcenter
+### Build and publish the binary release to maven-central
 
-gradle install
+./gradlew install
 
 # careful with this one!
-gradle bintrayUpload
+# https://getstream.io/blog/publishing-libraries-to-mavencentral-2021/
+# https://central.sonatype.org/pages/gradle.html
+./gradlew publishReleasePublicationToSonatypeRepository
+./gradlew closeAndReleaseRepository
+
+## also see https://oss.sonatype.org/
 ```
 
-For released versions check:
-
-- https://bintray.com/holgerbrandl/mpicbg-scicomp/krangl
-- https://jcenter.bintray.com/de/mpicbg/scicomp/krangl/
-
---
-
-4. Increment version to *-SNAPSHOT for next release cycle
+3. Increment version to *-SNAPSHOT for next release cycle
 
