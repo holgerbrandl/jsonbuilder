@@ -56,7 +56,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 dependencies {
-        compile 'com.github.holgerbrandl:krangl:-SNAPSHOT'
+        compile 'com.github.holgerbrandl:jsonbuilder:-SNAPSHOT'
 }
 ```
 
