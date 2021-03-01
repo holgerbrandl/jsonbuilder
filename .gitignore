@@ -3,3 +3,5 @@
 build
 *.gpg
 local.properties
+jsonbuilder.iml
+out
