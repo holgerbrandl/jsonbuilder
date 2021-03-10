@@ -53,8 +53,8 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 }
 
 group 'com.github.holgerbrandl'
-//version '0.9'
-version '0.10-SNAPSHOT'
+version '0.9.1'
+//version '0.10-SNAPSHOT'
 
 
 ext {
