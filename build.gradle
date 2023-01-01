@@ -44,7 +44,7 @@ dependencies {
 }
 
 // http://stackoverflow.com/questions/11474729/how-to-build-sources-jar-with-gradle
-tasks.register('sourcesJar') {
+task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
     from sourceSets.main.allSource
 }

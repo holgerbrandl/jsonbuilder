@@ -44,7 +44,7 @@ Both arrays and nested elements are supported without additional functions/const
 ### Gradle
 To get started simply add it as a dependency in your `build.gradle`:
 ```
-compile "com.github.holgerbrandl:jsonbuilder:0.9"
+compile "com.github.holgerbrandl:jsonbuilder:0.10"
 ```
 
 ### Development Snapshots
