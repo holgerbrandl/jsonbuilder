@@ -1,5 +1,4 @@
 buildscript {
-//    ext.kotlin_version = '1.4.31'
     repositories {
         mavenCentral()
     }
@@ -12,13 +11,13 @@ buildscript {
 
 
 plugins {
-    id "org.jetbrains.kotlin.jvm" version "1.4.31"
+    id "org.jetbrains.kotlin.jvm" version "1.7.20"
 }
 
 apply plugin: 'java'
 apply plugin: 'kotlin'
 apply plugin: 'application'
-apply plugin: 'maven'
+//apply plugin: 'maven'
 apply plugin: 'maven-publish'
 apply plugin: 'io.codearte.nexus-staging'
 
@@ -27,9 +26,7 @@ mainClassName = "foo.Bar" // not needed but does not work without
 
 repositories {
     mavenCentral()
-//    jcenter()
-//        mavenLocal() //todo disable for release
-    //    maven { url 'https://jitpack.io' }
+    mavenCentral()
 }
 
 
@@ -37,9 +34,9 @@ dependencies {
 //    compile "org.jetbrains.kotlin:kotlin-stdlib"
 
     // from https://github.com/stleary/JSON-java
-    compile 'org.json:json:20200518'
+    implementation 'org.json:json:20220924'
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
     testImplementation 'io.kotest:kotest-assertions-core:4.2.6'
 
     // needed to work around https://youtrack.jetbrains.com/issue/KT-15064
@@ -47,13 +44,13 @@ dependencies {
 }
 
 // http://stackoverflow.com/questions/11474729/how-to-build-sources-jar-with-gradle
-task sourcesJar(type: Jar, dependsOn: classes) {
+tasks.register('sourcesJar') {
     classifier = 'sources'
     from sourceSets.main.allSource
 }
 
 group 'com.github.holgerbrandl'
-version '0.9.1'
+version '0.10'
 //version '0.10-SNAPSHOT'
 
 
